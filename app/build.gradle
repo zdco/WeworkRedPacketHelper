@@ -13,6 +13,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
+
         release {
             storeFile file("keystore_chenyuebo.jks")
             storePassword "123456"
@@ -29,7 +30,7 @@ android {
             //移除无用的资源
             shrinkResources false
             // 签名配置
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
         release {
             //是否混淆

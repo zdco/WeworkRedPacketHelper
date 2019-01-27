@@ -13,6 +13,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Toast;
 
 import com.cyb.wework.R;
 import com.cyb.wework.utils.AppUtil;
@@ -47,6 +48,7 @@ public class RedPacketService extends AccessibilityService {
     protected void onServiceConnected() {
         super.onServiceConnected();
         LogUtil.d( "RedPacketService onServiceConnected 企业微信红包助手已启动");
+        Toast.makeText(this, "企业微信红包助手已启动", Toast.LENGTH_SHORT).show();
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
@@ -65,6 +67,9 @@ public class RedPacketService extends AccessibilityService {
             case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
                 String activityName = event.getClassName().toString();
                 currentActivity = activityName;
+                if (RedEnvelope.equals(currentActivity)) {
+                    openPacket(); // 开红包
+                }
                 LogUtil.d( "activityName:" + activityName);
                 break;
 
@@ -219,6 +224,8 @@ public class RedPacketService extends AccessibilityService {
             return "com.tencent.wework:id/cjj";
         } else if ("2.5.8".equals(weworkVersion)) {
             return "com.tencent.wework:id/cwf";
+        } else if("2.7.2".equals(weworkVersion)) {
+            return "com.tencent.wework:id/d94";
         }
         return null;
     }

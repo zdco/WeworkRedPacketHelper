@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
+import android.widget.Toast;
 
 import com.cyb.wework.utils.LogUtil;
 
@@ -27,6 +28,7 @@ public class MyNotificationListenerService extends NotificationListenerService {
     public void onListenerConnected() {
         super.onListenerConnected();
         LogUtil.d("MyNotificationListenerService onListenerConnected 通知使用权已开启");
+        Toast.makeText(this, "通知使用权已开启", Toast.LENGTH_SHORT).show();
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 

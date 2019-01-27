@@ -4,9 +4,11 @@
     <string name="preference_setting">偏好设置</string>
 
     <string name="open_assistant">开启助手</string>
+    <string name="open_assistant_service">开启助手服务</string>
     <string name="open_monitor_notification">开启通知监听</string>
+    <string name="open_monitor_notification_service">开启通知监听服务</string>
 
-    <string name="open_red_packet">领取红包</string>
+    <string name="open_red_packet">红包</string>
     <string name="red_packet_have_opened">手慢了，红包派完了</string>
     <string name="red_packet_expired">该红包已过期</string>
     <string name="notification_default_keyword">拼手气红包</string>
