@@ -6,8 +6,8 @@ android {
         applicationId "com.cyb.wework"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 12
-        versionName "1.11.0"
+        versionCode 13
+        versionName "1.12.0"
         // 只打包中文资源
         resConfigs "zh","en"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -40,7 +40,7 @@ android {
             //移除无用的资源
             shrinkResources false
             // 签名配置
-            signingConfig signingConfigs.release
+            //signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
